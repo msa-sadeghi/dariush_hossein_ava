@@ -32,16 +32,6 @@ def game_over():
                     score = 0
                     lives = 3
                     pygame.mixer.music.play(-1)
-
-
-            
-
-
-
-
-
-
-
 SCREEN_WIDTH = 1100
 SCREEN_HEIGHT = 700
 FPS = 60
