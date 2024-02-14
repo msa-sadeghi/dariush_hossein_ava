@@ -1,8 +1,8 @@
 from constants import *
 from world import World
+from levels.level1 import world_data
 
-
-game_world = World()
+game_world = World(world_data)
 
 running = True
 while running:
