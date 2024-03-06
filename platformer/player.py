@@ -41,9 +41,16 @@ class Player(Sprite):
         dy += self.yspeed  
         
         for tile in tile_map:
+            if tile[1].colliderect(self.rect.x +dx , self.rect.y, self.image.get_width(), self.image.get_height()):
+                dx = 0
+                
             if tile[1].colliderect(self.rect.x , self.rect.y + dy, self.image.get_width(), self.image.get_height()):
-                self.yspeed = 0
-                dy = tile[1].top - self.rect.bottom
+                if self.yspeed > 0:
+                    self.yspeed = 0
+                    dy = tile[1].top - self.rect.bottom
+                elif self.yspeed < 0:
+                    self.yspeed = 0
+                    dy = tile[1].bottom - self.rect.top
 
             
               
