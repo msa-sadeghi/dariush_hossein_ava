@@ -1,10 +1,10 @@
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, pygame
 from pygame.sprite import Sprite
 import math
 class Bullet(Sprite):
     def __init__(self, image, x,y, scale, angle):
         super().__init__()
-        self.image = image
+        self.image = pygame.transform.scale(image,(image.get_width()*scale, image.get_height()*scale))
         self.rect = self.image.get_rect(topleft = (x,y))
         self.angle = angle
         self.speed = 15
